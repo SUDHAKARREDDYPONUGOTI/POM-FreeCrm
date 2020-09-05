@@ -9,10 +9,6 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 
-
-
-
-
 public class LoginPageTest extends TestBase {
 	
 	public static LoginPage LoginPage;
@@ -44,7 +40,8 @@ public class LoginPageTest extends TestBase {
 		LoginPage.ClickOnLogin();
 	}
 	
-	@Test(priority = 3)
+	
+	@Test(enabled = false)
 	public void ValidateLogoTest() {
 		
 		boolean flag =LoginPage.ValidateLogo();
@@ -56,7 +53,7 @@ public class LoginPageTest extends TestBase {
 	public void EnterDataTest() {
 		
 		LoginPage.ClickOnLogin();
-		homepage = LoginPage.LoginPageButton(prop.getProperty("username"), prop.getProperty("password"));
+		LoginPage.LoginPageButton(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
 	
