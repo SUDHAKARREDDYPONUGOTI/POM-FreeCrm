@@ -7,7 +7,7 @@
         <methods>
           <include name="SetUp"/>
           <include name="closebrowser"/>
-          <include name="ClickonFreeAccountLinkTest"/>
+          <include name="ClickOnNamelink"/>
         </methods>
       </class> <!-- com.qa.crm.testcases.HomePageTest -->
     </classes>
