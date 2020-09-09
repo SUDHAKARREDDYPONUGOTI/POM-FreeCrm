@@ -52,8 +52,8 @@ public class LoginPageTest extends TestBase {
 	@Test(priority = 4)
 	public void EnterDataTest() {
 		
-		LoginPage.ClickOnLogin();
 		LoginPage.LoginPageButton(prop.getProperty("username"), prop.getProperty("password"));
+		LoginPage.ClickOnLogin();
 	}
 	
 	

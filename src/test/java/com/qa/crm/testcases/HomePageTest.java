@@ -11,7 +11,8 @@ import com.crm.qa.pages.LoginPage;
 
 public class HomePageTest extends TestBase {
 	
-	 HomePage homepage;
+
+   	HomePage homepage;
 	 LoginPage loginpage;
 	
 	public HomePageTest(){
@@ -39,15 +40,13 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test(priority = 3)
-	public void clickOnContactsLink() {
+	public String clickOnContactsLink() {
 		homepage.clickOnContacts();
+		return null;
+	
 	}
 	
-	@Test(priority = 4)
-	public void ClickOnNamelink() {
-		homepage.clickOnContacts();
-		homepage.clickOnName();
-	}
+	
 	
 	@AfterMethod(enabled = false)
 	public void closebrowser() {
