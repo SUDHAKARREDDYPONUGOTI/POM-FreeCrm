@@ -18,8 +18,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//*[@id=\"dashboard-toolbar\"]/div[1]/text()")
 	WebElement ContactsLogo;
 
-	@FindBy(xpath = "//div[@class='ui fluid container main-content']/table/thead/tr/th[contains(text(),'Name')]")
-	WebElement Name;
+	
 	
 	@FindBy(xpath = "//div[@id='top-header-menu']//div[3]//span[@class='trial-indicator']/a[contains(text(),'Free account')]")
 	WebElement FreeAccount;
@@ -37,12 +36,11 @@ public class HomePage extends TestBase {
 		 FreeAccount.click();		
 	}
 
-	public void clickOnContacts() {	
-			 contactsbtn.click();		
-			}
-
-	public void clickOnName() {
-		Name.click();
-				
+	public ContactsPage clickOnContacts() {	
+		contactsbtn.click();
+		return null;	
+	
 	}
+
+	
 }

@@ -14,6 +14,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import com.crm.qa.utils.TestUtil;
 
 public class TestBase {
+	
 	public static WebDriver driver;
 
 	public static Properties prop;
@@ -44,16 +45,16 @@ public class TestBase {
 		if (browser.equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", 
-					"F:\\BDD Farmework Workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
+					"C:\\Users\\sponugoti\\workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
 			 driver = new ChromeDriver();
 		}else if (browser.equals("FF")) {
 			System.setProperty("webdriver.chrome.driver", 
-					"F:\\BDD Farmework Workspace\\POM-FreeCrm\\Browsers\\gechodriver.exe");
+					"C:\\Users\\sponugoti\\workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
 			 driver = new FirefoxDriver();
 
 		}else if (browser.equals("IE")) {
 			System.setProperty("webdriver.chrome.driver", 
-					"F:\\BDD Farmework Workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
+					"C:\\Users\\sponugoti\\workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
 			 driver = new InternetExplorerDriver();
 		}
 		
