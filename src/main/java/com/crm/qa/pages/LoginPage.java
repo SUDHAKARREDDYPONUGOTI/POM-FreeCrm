@@ -1,15 +1,17 @@
 package com.crm.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.aventstack.extentreports.model.Log;
+
 import com.crm.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 	
 	@FindBy(xpath = "//a[@class='brand-name']")
+	@CacheLookup
 	WebElement crmlogo;
 	
 	@FindBy(xpath = "//a[@class='btn btn-primary btn-xs-2 btn-shadow btn-rect btn-icon btn-icon-left']/span[2]")

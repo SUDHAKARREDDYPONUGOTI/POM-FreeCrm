@@ -10,6 +10,8 @@
     <classes>
       <class name="com.qa.crm.testcases.LoginPageTest"/>
       <class name="com.qa.crm.testcases.HomePageTest"/>
+      <class name="com.qa.crm.testcases.ContactsPageTest"/>
+      <class name="com.qa.crm.testcases.DealsPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

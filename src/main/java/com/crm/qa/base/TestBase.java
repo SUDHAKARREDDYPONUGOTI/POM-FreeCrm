@@ -45,7 +45,7 @@ public class TestBase {
 		if (browser.equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", 
-					"C:\\Users\\sponugoti\\workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
+					"F:\\BDD Farmework Workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
 			 driver = new ChromeDriver();
 		}else if (browser.equals("FF")) {
 			System.setProperty("webdriver.chrome.driver", 

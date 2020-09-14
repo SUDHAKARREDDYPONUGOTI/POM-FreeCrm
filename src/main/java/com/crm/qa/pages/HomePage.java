@@ -1,19 +1,18 @@
 package com.crm.qa.pages;
 
-import java.awt.Desktop.Action;
+
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	@FindBy(xpath="//div[@id='main-nav']/a[@class='item']/span[contains(text(),'Contacts')]")
-	WebElement contactsbtn;
+	
 
 	@FindBy(xpath = "//*[@id=\"dashboard-toolbar\"]/div[1]/text()")
 	WebElement ContactsLogo;
@@ -22,6 +21,9 @@ public class HomePage extends TestBase {
 	
 	@FindBy(xpath = "//div[@id='top-header-menu']//div[3]//span[@class='trial-indicator']/a[contains(text(),'Free account')]")
 	WebElement FreeAccount;
+	
+	@FindBy(xpath="//div[@id='main-nav']/a[@class='item']/span[contains(text(),'Contacts')]")
+	WebElement clickOnContactLink;
 	
 	public HomePage() {
 		
@@ -36,11 +38,14 @@ public class HomePage extends TestBase {
 		 FreeAccount.click();		
 	}
 
-	public ContactsPage clickOnContacts() {	
-		contactsbtn.click();
-		return null;	
-	
+
+	public ContactsPage clickOnContactLink() {
+		clickOnContactLink.click();
+		return null;
 	}
 
+
+
+	
 	
 }

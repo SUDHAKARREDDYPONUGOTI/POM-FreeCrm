@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 
@@ -14,6 +15,7 @@ public class HomePageTest extends TestBase {
 
    	HomePage homepage;
 	 LoginPage loginpage;
+	 ContactsPage contactpage;
 	
 	public HomePageTest(){
 		super();
@@ -23,8 +25,10 @@ public class HomePageTest extends TestBase {
 	public void SetUp() {
 		initialize();
 		loginpage = new LoginPage();
+		contactpage = new ContactsPage();
 		loginpage.ClickOnLogin();
-		homepage = loginpage.LoginPageButton(prop.getProperty("username"), prop.getProperty("password"));	
+		homepage = loginpage.LoginPageButton(prop.getProperty("username"), prop.getProperty("password"));
+		
 	}
 	
 	@Test(priority = 1)
@@ -40,18 +44,16 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test(priority = 3)
-	public String clickOnContactsLink() {
-		homepage.clickOnContacts();
-		return null;
-	
+	public void clickOnContactsMenu() {
+		contactpage = homepage.clickOnContactLink();
+		
 	}
-	
 	
 	
 	@AfterMethod(enabled = false)
 	public void closebrowser() {
 		
-		driver.quit();
+		//driver.quit();
 	}
 
 }
