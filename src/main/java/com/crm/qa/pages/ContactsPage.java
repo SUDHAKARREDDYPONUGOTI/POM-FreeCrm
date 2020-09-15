@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.TestBase;
 
 public class ContactsPage extends TestBase {
+	
+	
 
 	
 
@@ -42,11 +44,14 @@ public class ContactsPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void clickOnNew() {
+		
+		New_Button.click();
+	}
 	
 	
 	public void EnterFormData(String Fname, String Lname,String Mname, String email) {	
 		
-		New_Button.click();
 		First_Name.sendKeys(Fname);
 		Last_Name.sendKeys(Lname);
 		Middle_Name.sendKeys(Mname);

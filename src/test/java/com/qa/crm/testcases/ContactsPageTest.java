@@ -3,6 +3,7 @@ package com.qa.crm.testcases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
@@ -10,6 +11,7 @@ import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.DealsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.utils.TestUtil;
 
 public class ContactsPageTest extends TestBase {
 	
@@ -20,6 +22,8 @@ public class ContactsPageTest extends TestBase {
 	ContactsPage contactpage;
 	
 	DealsPage dealspage;
+	
+	String sheetName = "contacts";
 	
 	public ContactsPageTest() {
 		
@@ -46,23 +50,20 @@ public class ContactsPageTest extends TestBase {
 	}
 	
 	
-	
-	@Test(priority = 1)
-	public void filledForm(String Fname, String Lname,String Mname, String email) {
-		try {
-		// contactpage.clickOnNew();
-		contactpage.EnterFormData("POLICE BABU", "LAWYER BABU", "DOCTER", "Test5555@gmail.com");
-		// contactpage.clickOnSaveButton();
-		}catch (Exception e) {
-		System.out.println("No TestNG native expection");
-		}
+	@DataProvider
+	public Object[][] getCRMTestData(){
+		Object data[][] = TestUtil.getTestData(sheetName);
+		return data;
 	}
 	
-	
-	
-	
-	
-	
+	@Test(priority = 1, dataProvider = "getCRMTestData")
+	public void filledForm(String firstname, String lastname, String middlename, String email) {
+		contactpage.clickOnNew();
+	//	contactpage.EnterFormData("hello", "man", "Reddy", "babu");
+		
+		contactpage.EnterFormData(firstname, lastname, middlename, email);
+	}
+		
 	
 	@Test(enabled = false)
 	public void clickOnDelasPage() {

@@ -36,8 +36,7 @@ public class TestUtil extends TestBase{
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
-			file = new FileInputStream("F:\\BDD Farmework Workspace\\POM-FreeCrm\\"
-					+ "src\\main\\java\\com\\crm\\qa\\testdata\\TestData.xlsx");
+			file = new FileInputStream("F:\\BDD Farmework Workspace\\POM-FreeCrm\\src\\main\\java\\com\\crm\\qa\\testdata\\FreeCrmTestData.xlsx");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
