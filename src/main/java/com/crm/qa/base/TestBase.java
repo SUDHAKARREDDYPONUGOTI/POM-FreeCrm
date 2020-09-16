@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.ss.formula.SheetNameFormatter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +25,7 @@ public class TestBase {
 	public static Properties prop;
 	public  static EventFiringWebDriver e_driver;
 	public static WebEventListner eventListener;
+	static Logger log = Logger.getLogger(TestBase.class);    // import apache log4j
 	
 	
 
@@ -52,6 +54,8 @@ public class TestBase {
 		String browser = prop.getProperty("browser");
 
 		if (browser.equals("chrome")) {
+			
+			log.info("***************Chrome browser Launched **********************");
 
 			System.setProperty("webdriver.chrome.driver", 
 					"F:\\BDD Farmework Workspace\\POM-FreeCrm\\Browsers\\chromedriver.exe");
@@ -75,11 +79,13 @@ public class TestBase {
 		driver = e_driver;
 		
 		driver.manage().window().maximize();
+		log.info("***************$$$$$$$$$$$$$$$$$$$$Window maximized $$$$$$$$$$$$$$$$$$$$$$$**********************");
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICITY_TIME, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIME, TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("url"));
+		log.info("*************** Application Launched ######################## **********************");
 		
 	}
 }

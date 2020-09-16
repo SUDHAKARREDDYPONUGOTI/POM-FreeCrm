@@ -9,10 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.TestBase;
 
 public class ContactsPage extends TestBase {
-	
-	
-
-	
 
 	@FindBy(xpath = "//div[@class='ui fluid container main-content']/table/thead/tr/th[contains(text(),'Name')]")
 	WebElement NameColumn;
@@ -59,12 +55,6 @@ public class ContactsPage extends TestBase {
 		
 		Save_Button.click();
 	}
-	
-	
-	
-	
-	
-	
 	
 
 	
